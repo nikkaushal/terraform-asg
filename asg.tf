@@ -2,6 +2,7 @@ resource "aws_launch_template" "asg" {
   name                  =  "${var.COMPONENT}-${var.ENV}-template"
   image_id              = data.aws_ami.ami.id
   instance_type         = var.INSTANCE_TYPE
+
 }
 
 
@@ -15,4 +16,5 @@ resource "aws_autoscaling_group" "bar" {
     id = aws_launch_template.asg.id
     version = "$Latest"
   }
+  vpc_zone_identifier = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNETS
 }
