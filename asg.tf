@@ -6,7 +6,7 @@ resource "aws_launch_template" "asg" {
 }
 
 
-resource "aws_autoscaling_group" "bar" {
+resource "aws_autoscaling_group" "asg" {
   name = "${var.COMPONENT}-${var.ENV}-asg"
   max_size = 1
   min_size = 1
