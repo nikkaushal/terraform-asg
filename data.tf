@@ -5,9 +5,9 @@ data "aws_ami" "ami" {
 
 data "terraform_remote_state" "vpc" {
   backend             = "s3"
-  config {
+  config              = {
     bucket            = var.bucket
     key               = "vpc/${var.ENV}/terraform.tfstate"
-    region           = var.region
+    region            = var.region
   }
 }
