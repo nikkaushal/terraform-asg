@@ -8,7 +8,7 @@ resource "aws_launch_template" "asg" {
 
 resource "aws_autoscaling_group" "asg" {
     name                    = "${var.COMPONENT}-${var.ENV}-asg"
-  max_size                  = 1
+  max_size                  = 1 //var.ASG_MAX_INSTANCES
   min_size                  = 1
   desired_capacity          = 1
   force_delete              = true
