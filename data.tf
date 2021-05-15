@@ -1,6 +1,6 @@
 data "aws_ami" "ami" {
   most_recent         = true
-  owners              = ["293222827824"]
+  owners              = ["self"]
   filter {
     name              = "name"
     values            = ["${var.COMPONENT}-${var.APP_ARTIFACT_VERSION}"]
