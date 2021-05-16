@@ -3,7 +3,7 @@ data "aws_ami" "ami" {
   owners              = ["293222827824"]
   filter {
     name              = "name"
-    values            = ["${var.COMPONENT}-${var.APP_ARTIFACT_VERSION}"]
+    values            = ["frontend-0.0.22"]//["${var.COMPONENT}-${var.APP_ARTIFACT_VERSION}"]
   }
   filter {
     name   = "root-device-type"
