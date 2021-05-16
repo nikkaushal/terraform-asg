@@ -5,6 +5,15 @@ data "aws_ami" "ami" {
     name              = "name"
     values            = ["${var.COMPONENT}-${var.APP_ARTIFACT_VERSION}"]
   }
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 }
 
 data "terraform_remote_state" "vpc" {
