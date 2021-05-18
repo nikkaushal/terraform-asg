@@ -8,7 +8,6 @@ resource "aws_launch_template" "asg" {
 
 resource "aws_autoscaling_group" "asg" {
   name                      = "${var.COMPONENT}-${var.ENV}-asg"
-  availability_zones        = ["us-east-1a"]
   max_size                  = var.ASG_MAX_INSTANCES
   min_size                  = 1
   desired_capacity          = 1
